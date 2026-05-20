@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'app_decoration.dart';
 
 class ItemCardInfo extends StatelessWidget {
-   const ItemCardInfo({
+  const ItemCardInfo({
     super.key,
     required this.itemImagePath,
     required this.itemName,
@@ -18,7 +18,6 @@ class ItemCardInfo extends StatelessWidget {
   final String itemImagePath;
   final String itemPrice;
   final String itemName;
-  // stString itemTitle;
   final int itemCounter;
   final VoidCallback addItemOnPressed;
   final VoidCallback removeItemOnPressed;
@@ -37,7 +36,7 @@ class ItemCardInfo extends StatelessWidget {
         ),
         child: Column(
           children: [
-            Image(image: AssetImage(itemImagePath)),
+            Image(image: AssetImage(itemImagePath), height: 150, width: 250),
             AppDecoration.spaceBetweenWidgets,
             Text(itemPrice, style: AppDecoration.appTextStyle),
             AppDecoration.spaceBetweenWidgets,
@@ -47,7 +46,7 @@ class ItemCardInfo extends StatelessWidget {
               children: [
                 IconButton(
                   onPressed: addItemOnPressed,
-                  icon: Icon(Icons.add_circle_outline),
+                  icon: Icon(Icons.add_circle_outline,color: AppDecoration.appPrimaryColor,),
                 ),
                 SizedBox(width: 5),
                 Text(
@@ -61,10 +60,16 @@ class ItemCardInfo extends StatelessWidget {
                 SizedBox(width: 5),
                 IconButton(
                   onPressed: removeItemOnPressed,
-                  icon: Icon(Icons.remove_circle_outline),
+                  icon: Icon(Icons.remove_circle_outline,color: AppDecoration.appPrimaryColor,),
                 ),
                 SizedBox(width: 5),
-                ElevatedButton(onPressed: () {}, child: Text('Add to Cart')),
+                ElevatedButton(
+                  onPressed: () {},
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: AppDecoration.appPrimaryColor,
+                  ),
+                  child: Text('Add to Cart'),
+                ),
               ],
             ),
           ],

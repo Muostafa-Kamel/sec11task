@@ -70,8 +70,8 @@ class _ItemInfoPageState extends State<ItemInfoPage> {
         
               Text(
                 """Lenovo is one of the biggest laptop manufacturers in the world, known for making laptops for students, business users, programmers, designers, and gamers.
-                  Here are the main Lenovo laptop series and what each one is best for:
-                  Best for: Business, programming, office work
+Here are the main Lenovo laptop series and what each one is best for:
+Best for: Business, programming, office work
                   """,
               ),
               Divider(),

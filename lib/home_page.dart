@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:sec11task/core/app_decoration.dart';
 import 'package:sec11task/core/item_card_info.dart';
+import 'package:sec11task/item_info_page2.dart';
 import 'package:sec11task/item_info_page.dart';
 
 class HomePage extends StatelessWidget {
@@ -34,7 +35,7 @@ class _MyAppState extends State<MyApp> {
       appBar: AppBar(
         backgroundColor: AppDecoration.appPrimaryColor,
         leading: Icon(Icons.arrow_back),
-        title: Text("Laptop Department"),
+        title: Text("E- Shopping"),
         centerTitle: true,
         actions: [
           Icon(Icons.shopping_cart),
@@ -70,25 +71,30 @@ class _MyAppState extends State<MyApp> {
                   },
                 ),
                 AppDecoration.spaceBetweenWidgets,
-                ItemCardInfo(
-                  itemImagePath: 'lib/assets/images/lap2.jpg',
-                  itemPrice: "MAC Laptop",
-                  itemName: '90.000 LE',
-                  itemCounter: counter,
-
-                  addItemOnPressed: (){
-                    setState(() {
-                      counter++;
-                    });
-                  },
-                  removeItemOnPressed: (){
-                    setState(() {
-                      counter--;
-                    });
+                GestureDetector(
+                  child: ItemCardInfo(
+                    itemImagePath: 'lib/assets/images/book1.jpeg',
+                    itemPrice: "MAC Laptop",
+                    itemName: '90.000 LE',
+                    itemCounter: counter,
+                    addItemOnPressed: (){
+                      setState(() {
+                        counter++;
+                      });
+                    },
+                    removeItemOnPressed: (){
+                      setState(() {
+                        counter--;
+                      });
+                    },
+                  ),
+                  onTap: (){
+                    Navigator.push(context, MaterialPageRoute(builder: (context)=> ItemInfoPage2(title: 'title')));
                   },
                 ),
                 AppDecoration.spaceBetweenWidgets,
               ],
+
             ),
             AppDecoration.spaceBetweenWidgets,
             Row(
